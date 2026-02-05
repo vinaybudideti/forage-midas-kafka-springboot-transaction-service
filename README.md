@@ -47,5 +47,18 @@ Returns current balance for a user (JSON).
 ```bash
 ./mvnw clean test
 
+```
 ### Run
 ./mvnw spring-boot:run
+
+### Verification / Test Evidence
+- **TaskTwoTests** covers transaction ingestion + persistence + incentive integration behavior
+- Embedded Kafka tests validate end-to-end processing
+
+### What I Learned / Engineering Focus
+- Designing event-driven workflows with clear boundaries (listener → processor → repository)
+- Building production-minded integrations: input validation, idempotency, and error handling
+- Writing tests that prove behavior, not just code coverage
+
+### Credits
+Simulation: JPMorgan Chase & Co. — Forage “Midas” program.
