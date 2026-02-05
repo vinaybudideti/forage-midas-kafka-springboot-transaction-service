@@ -46,3 +46,6 @@ Returns current balance for a user (JSON).
 ### Build + Test
 ```bash
 ./mvnw clean test
+
+### Run
+./mvnw spring-boot:run
