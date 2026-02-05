@@ -2,6 +2,14 @@ package com.jpmc.midascore.entity;
 
 import jakarta.persistence.*;
 
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 @Entity
 public class UserRecord {
 
@@ -43,4 +51,18 @@ public class UserRecord {
     public void setBalance(float balance) {
         this.balance = balance;
     }
+    @OneToMany(mappedBy = "sender", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<TransactionRecord> sentTransactions = new ArrayList<>();
+
+    @OneToMany(mappedBy = "recipient", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<TransactionRecord> receivedTransactions = new ArrayList<>();
+
+    public List<TransactionRecord> getSentTransactions() {
+        return sentTransactions;
+    }
+
+    public List<TransactionRecord> getReceivedTransactions() {
+        return receivedTransactions;
+    } 
+    
 }
