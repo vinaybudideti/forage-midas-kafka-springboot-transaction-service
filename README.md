@@ -49,8 +49,10 @@ Returns current balance for a user (JSON).
 
 ```
 ### Run
+```bash
 ./mvnw spring-boot:run
 
+```
 ### Verification / Test Evidence
 - **TaskTwoTests** covers transaction ingestion + persistence + incentive integration behavior
 - Embedded Kafka tests validate end-to-end processing
